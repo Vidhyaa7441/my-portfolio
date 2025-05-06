@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhyaa Thiyagarajan - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header">
+            <h1>Vidhyaa Thiyagarajan</h1>
+            <p class="tagline">Aspiring Full Stack  Developer | Data Analyst | UI/UX Designer</p> <!-- Tagline added -->
+        </div>
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I am a final year engineering student who is keen to start my professional career in a dynamic and growth-driven organization. I look to leverage my technical skills, analytical mind, and learning attitude towards actual projects. With a directed approach and a capacity to work individually as well as in a team, I am dedicated to contributing towards organizational achievement.</p>
+        </div>
+    </div>
+</section>
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>Java <div class="skill-level"></div></li>
+                    <li>Basics of Python <div class="skill-level"></div></li>
+                    <li>Basics of C <div class="skill-level"></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Web Technologies</h3>
+                <ul class="skill-list">
+                    <li>HTML <div class="skill-level"></div></li>
+                    <li>CSS <div class="skill-level"></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Design Tools</h3>
+                <ul class="skill-list">
+                    <li>Figma <div class="skill-level"></div></li>
+                    <li>UI/UX Prototyping <div class="skill-level"></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Data Visualization</h3>
+                <ul class="skill-list">
+                    <li>Power BI <div class="skill-level"></div></li>
+                    <li>Tableau <div class="skill-level"></div></li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Development Tools</h3>
+                <ul class="skill-list">
+                    <li>IntelliJ IDEA <div class="skill-level"></div></li>
+                    <li>Eclipse <div class="skill-level"></div></li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <ul class="skill-list">
+                    <li>Communication <div class="skill-level"></div></li>
+                    <li>Team Collaboration <div class="skill-level"></div></li>
+                    <li>Time Management <div class="skill-level"></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="project-card">
+            <div class="project-info">
+                <h3 class="project-title">Resume Builder – Java Desktop Application</h3>
+                <p>     A user-friendly Java application that helps generate professional resumes in PDF format. Users can input their personal details, education, skills, internships, and projects, and the application automatically generates a customized resume. The application uses the iText library to create and export the resume in PDF format. add more content to it</p>
+                <div class="project-details">
+                    <h4>Technologies Used :</h4>
+                    <ul>
+                        <li>Programming Language: Java</li>
+                        <li>GUI Framework: Java Swing</li>
+                        <li>PDF Library: iText (for creating and formatting PDF documents)</li>
+                        <li>IDE: Eclipse</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <!-- Update the link below -->
+                    <a href="https://github.com/Vidhyaa7441/ResumeBuilder" class="btn-project" target="_blank">Source Code</a>
+                </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="mailto:vidhyaathiyaga@gmail.com">Email</a>
+            <a href="https://github.com/Vidhyaa7441">GitHub</a>
+            <a href="https://www.linkedin.com/in/vidhyaa-thiyagarajan-475127286/">LinkedIn</a>
+        </div>
+
+        <p>&copy; 2025 Vidhyaa Thiyagarajan. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Add active class to the current navigation item
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('section');
+    
+    // Add smooth scrolling to all links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            // Scroll to the section
+            window.scrollTo({
+                top: targetSection.offsetTop - 70, // Offset for the fixed navbar
+                behavior: 'smooth'
+            });
+            
+            // Update active class
+            navLinks.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    
+    // Add active class based on scroll position
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
