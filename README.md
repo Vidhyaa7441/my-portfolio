@@ -9,6 +9,7 @@ Welcome to my personal portfolio website! This website is built using **HTML** a
 ## Technologies Used:
 - **HTML** for structure
 - **CSS** for styling
+- **Javascript** for interactive styling and responses
 
 ## Live Website:
 You can view my portfolio here:  
